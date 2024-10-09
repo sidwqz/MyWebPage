@@ -50,3 +50,12 @@ resizeContainer();
 // Adiciona o listener para redimensionamento da janela
 window.addEventListener('resize', resizeContainer);
 
+  function ajustarImagem() {
+            const imagem = document.getElementById('logo');
+            imagem.style.width = window.innerWidth + 'px';
+            imagem.style.height = 'auto'; // Manter a proporção
+        }
+
+        window.addEventListener('resize', ajustarImagem);
+      
+        window.addEventListener('load', ajustarImagem);
