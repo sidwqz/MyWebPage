@@ -49,3 +49,4 @@ resizeContainer();
 
 // Adiciona o listener para redimensionamento da janela
 window.addEventListener('resize', resizeContainer);
+
