@@ -127,7 +127,7 @@ h4 {
 
 
 .header {
-    background: linear-gradient(to bottom, #111, #000000aa), url(./images/Alcantara.jpg);
+    background: #000;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top left;
@@ -476,7 +476,7 @@ section .items .item {
 
 
 .contact{
-    background:linear-gradient(#000000dd,#000000dd),url(./images/footer/footer-bg.jpg);
+    background: #000;
 }
 
 
