@@ -276,11 +276,12 @@ section .items .item {
 
 .about .items .item .image {
     width: 360px;
-    height: 400px;
+    height: auto;
     border-radius: 55%;
     box-shadow: 0 0 15px #fff;
     cursor: pointer;
     overflow: hidden;
+    display: block;
     position: relative;
 }
 
