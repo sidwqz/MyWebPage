@@ -59,3 +59,15 @@ window.addEventListener('resize', resizeContainer);
         window.addEventListener('resize', ajustarImagem);
       
         window.addEventListener('load', ajustarImagem);
+// Odeio Iphones
+window.addEventListener('resize', function() {
+    let largura = window.innerWidth;
+    let altura = window.innerHeight;
+    let imgContainer = document.querySelector('.img-container');
+    
+    // Ajuste de tamanho do container conforme largura e altura
+    imgContainer.style.width = `${largura}px`;
+    imgContainer.style.height = `${altura}px`;
+});
+document.body.style.paddingTop = `${window.safeAreaInsets.top}px`;
+document.body.style.paddingBottom = `${window.safeAreaInsets.bottom}px`;
