@@ -277,7 +277,7 @@ section .items .item {
 .about .items .item .image {
     width: 360px;
     height: 450px;
-    border-radius: 55%;
+    border-radius: 20%;
     box-shadow: 0 0 15px #fff;
     cursor: pointer;
     overflow: hidden;
