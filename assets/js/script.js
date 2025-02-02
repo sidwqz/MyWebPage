@@ -71,3 +71,25 @@ window.addEventListener('resize', function() {
 });
 document.body.style.paddingTop = `${window.safeAreaInsets.top}px`;
 document.body.style.paddingBottom = `${window.safeAreaInsets.bottom}px`;
+
+let currentIndex = 0;
+const images = document.querySelectorAll("#sliderImages img");
+const sliderImages = document.getElementById('sliderImages');
+
+
+let currentSlide = 0;
+const image = document.querySelectorAll(".slider-images");
+const imageContainer = document.getElementById("imageContainer");
+
+function moveSlide(direction) {
+    currentSlide += direction;
+    
+    if (currentSlide < 0) {
+        currentSlide = images.length - 1;
+    } else if (currentSlide >= images.length) {
+        currentSlide = 0;
+    }
+    
+    const offset = -currentSlide * 100; // Para mover a imagem 100% à esquerda ou direita
+    imageContainer.style.transform = `translateX(${offset}%)`;
+}
