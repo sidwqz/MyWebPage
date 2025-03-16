@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Resetando alguns estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #111;
+    color: #333;
+}
+
+header {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Ajusta as imagens no espaço disponível */
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1 1 auto; /* Permite que as imagens se ajustem conforme o tamanho */
+    max-width: 300px; /* Define o tamanho máximo das imagens */
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.gallery-item source{
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.05); /* Aumenta um pouco a imagem ao passar o mouse */
+}
+
+.description {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    font-size: 1.1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+footer p {
+    font-size: 1.2em;
+}
+
+footer a {
+    color: inherit;  /* Remove a cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.gallery-item video {
+    width: 100%; /* Faz o vídeo e a imagem ocuparem toda a largura disponível */
+    height: auto; /* Mantém a proporção da imagem e do vídeo */
+    display: block; /* Remove o espaço abaixo da imagem e do vídeo */
+}
+
+/* Garante que o vídeo mantenha uma proporção correta */
+.gallery-item video {
+    object-fit: cover; /* Faz o vídeo preencher a área sem distorcer */
+}
