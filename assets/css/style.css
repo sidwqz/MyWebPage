@@ -112,7 +112,7 @@ h4 {
     align-items: center;
     border: 1px solid #fff;
     border-radius: 50%;
-    font: 16px;
+    font: 56px;
     background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, 
                               #fd5949 45%,#d6249f 60%,#285AEB 90%);
@@ -312,7 +312,6 @@ section .items .item {
     text-align: center;
 }
 
-
 .about .items .item .desc p {
     font-size: 22px;
     line-height: 35px;
@@ -321,10 +320,24 @@ section .items .item {
     padding: 2rem 4rem;
     font-style: italic;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
+.items .item{
+    width: 100vh;
+    height: 100vh;
+    padding-right: 300px;
+    padding-top: 200px;
+    position: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 
+}
 .about .items .item .desc .img {
     transform: rotate(0deg);
+    align-items: center;
+    justify-content: center;
 }
 
 .about .items .item .desc .img:nth-child(1) {
@@ -381,6 +394,13 @@ section .items .item {
     padding: 2rem 0rem;
     border-bottom: 1px solid #444;
     padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+
 }
 
 .services .items .item .title {
@@ -394,8 +414,8 @@ section .items .item {
     height: 0px;
     padding: 0rem 0rem;
     overflow: hidden;
-
 }
+
 
 .services .items .item:hover .desc {
     height: 150px;
@@ -543,7 +563,7 @@ section .items .item {
     justify-content: center;
     align-items: center;
     border: 1px solid #fff;
-    font: 26px;
+    font: 150px;
     background: #d6249f;
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, 
                                 #fd5949 45%,#d6249f 60%,#285AEB 90%);

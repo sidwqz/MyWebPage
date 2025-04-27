@@ -1,106 +1,179 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
-    <title>Galeria de Fotos</title>
-    <style>
-        /* Definindo o fundo preto e a estilização do título */
-        body {
-            background-color: black;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+  <title>Galeria de Fotos</title>
+  <style>
+    body {
+      background-color: black;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        h1 {
-            color: white;
-            text-align: center;
-            font-size: 60px;
-            letter-spacing: 10px;
-            margin-top: 30px;
-            filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 15px #fff);
-        }
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 60px;
+      letter-spacing: 10px;
+      margin-top: 30px;
+      filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 15px #fff);
+    }
 
-        /* Animação de piscar */
-        @keyframes blink {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px;
+    }
 
-        /* Definindo a galeria de fotos e vídeos */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 30px;
-        }
+    .gallery img, .gallery video {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
 
-        /* Estilo para imagens e vídeos na galeria */
-        .gallery img, .gallery video {
-            width: 300px;
-            height: 200px;
-            object-fit: cover;
-            border-radius:20px;
-            transition: transform 0.3s ease;
-        }
+    .gallery img:hover, .gallery video:hover {
+      transform: scale(1.1);
+    }
 
-        /* Efeito ao passar o mouse sobre as imagens e vídeos */
-        .gallery img:hover, .gallery video:hover {
-            transform: scale(1.1);
-        }
+    /* Sobe a imagem 8019 um pouquinho */
+    .gallery img[src*="IMG_8019.JPG"] {
+      margin-top: -20px; /* sobe 20px */
+    }
 
-        /* Tornando a galeria responsiva */
-        @media (max-width: 768px) {
-            .gallery img, .gallery video {
-                width: 100%;
-                height: auto;
-            }
-        }
+    @media (max-width: 768px) {
+      .gallery img, .gallery video {
+        width: 100%;
+        height: auto;
+      }
+      .gallery img[src*="IMG_8019.JPG"] {
+        margin-top: 0; /* No celular não sobe, fica normal */
+      }
+    }
 
-        @keyframes  animarTexto {
-            0%,10%,100% {
-                width: 0;
-            }
-            70%,90% {
-                width: 100%;
-            }
-        }
-    </style>
+    /* Estilo do Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn 0.5s; /* animaçãozinha no modal */
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      animation: zoomIn 0.5s; /* animaçãozinha no conteúdo */
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.7);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>G A L L E R Y</h1>
+<h1>G A L L E R Y</h1>
 
-    <div class="gallery">
-        <img src="./imagem galeria/doadordebunda.jpg" alt="Foto 1">
-        <img src="./imagem galeria/chiqu3chique.jpg" alt="Foto 2">
-        <img src="./imagem galeria/kkkkkkkkjjkjk.jpg" alt="Foto 3">
-        <img src="./imagem galeria/negao.jpg" alt="Foto 4">
-        <img src="./imagem galeria/viadochorando.jpg" alt="Foto 5">
-        <img src="./imagem galeria/selokopaicompensa.jpg" alt="Foto 6">
-        <img src="./imagem galeria/showshowblim.jpg" alt="Foto 7">
-        <img src="./imagem galeria/boiola e dias.jpg" alt="Foto 8">
+<div class="gallery">
+  <img src="./imagem galeria/doadordebunda.jpg" alt="Foto 1">
+  <img src="./imagem galeria/chiqu3chique.jpg" alt="Foto 2">
+  <img src="./imagem galeria/kkkkkkkkjjkjk.jpg" alt="Foto 3">
+  <img src="./imagem galeria/negao.jpg" alt="Foto 4">
+  <img src="./imagem galeria/viadochorando.jpg" alt="Foto 5">
+  <img src="./imagem galeria/selokopaicompensa.jpg" alt="Foto 6">
+  <img src="./imagem galeria/showshowblim.jpg" alt="Foto 7">
+  <img src="./imagem galeria/boiola e dias.jpg" alt="Foto 8">
+  <img src="./imagem galeria/IMG_7994.JPG" alt="Foto 9">
+  <img src="./imagem galeria/IMG_8003.JPG" alt="Foto 10">
+  <img src="./imagem galeria/IMG_8016.JPG" alt="Foto 12">
+  <img src="./imagem galeria/IMG_8019.JPG" alt="Foto 13">
 
-        <!-- Exemplos de vídeos na galeria -->
-        <video controls>
-            <source src="./imagem galeria/videozao2kkkkkkkkkkkkkkkkkkk.mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-        </video>
-        <video controls>
-            <source src="./imagem galeria/videozaokkkkkkkkkkkkkkkkkkkkkkkkk.mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-        </video>
-    </div>
+  <video controls>
+    <source src="./imagem galeria/videozao2kkkkkkkkkkkkkkkkkkk.mp4" type="video/mp4">
+    Seu navegador não suporta a tag de vídeo.
+  </video>
+  <video controls>
+    <source src="./imagem galeria/videozaokkkkkkkkkkkkkkkkkkkkkkkkk.mp4" type="video/mp4">
+    Seu navegador não suporta a tag de vídeo.
+  </video>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imgModal">
+</div>
+
+<script>
+  const modal = document.getElementById('myModal');
+  const modalImg = document.getElementById('imgModal');
+  const closeBtn = document.getElementsByClassName('close')[0];
+  const images = document.querySelectorAll('.gallery img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.onclick = function() {
+    modal.style.display = 'none';
+  }
+
+  modal.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
+</script>
 
 </body>
 </html>
