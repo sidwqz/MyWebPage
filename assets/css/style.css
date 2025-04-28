@@ -323,17 +323,7 @@ section .items .item {
     align-items: center;
     justify-content: center;
 }
-.items .item{
-    width: 100vh;
-    height: 100vh;
-    padding-right: 300px;
-    padding-top: 200px;
-    position: center;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
 
-}
 .about .items .item .desc .img {
     transform: rotate(0deg);
     align-items: center;
