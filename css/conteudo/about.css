@@ -25,19 +25,23 @@
 .content {
     padding: 80px 40px;
     order: 1;
+
 }
 
 .content h1 {
     margin-bottom: 16px;
+
 }
 
 .content h2 {
     margin-bottom: 40px;
+
 }
 
 .content p {
     margin-bottom: 60px;
     max-width: 62ch;
+
 }
 
 .icons {
